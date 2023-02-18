@@ -12,6 +12,10 @@ const MainContent = () => {
                 </div>
                 <div>
                     <button>Shop Now</button>
+                    <div className='desc'>
+                        <h5>Description</h5>
+                        <p>neon headphones</p>
+                    </div>
                 </div>
             </div>
         </main>
