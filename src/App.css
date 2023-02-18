@@ -145,14 +145,20 @@ a{
   text-align: end;
 }
 
-.products-heading{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  grid-gap: 15px;
-  gap: 15px;
-  margin-top: 20px;
-  width: 100%;
+.products-heading {
+  text-align: center;
+  margin: 40px 0;
+  color: #324d67;
+}
+
+.products-heading h2 {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.products-heading p {
+  font-size: 16px;
+  font-weight: 200;
 }
 
 @media screen and (max-width: 800px) {
