@@ -18,6 +18,10 @@ const MainContent = () => {
                     </div>
                 </div>
             </div>
+            <div className='products-heading'>
+                <h2>Best Selling Products</h2>
+                <p>Description</p>
+            </div>
         </main>
     );
 }

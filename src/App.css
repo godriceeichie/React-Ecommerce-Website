@@ -145,6 +145,16 @@ a{
   text-align: end;
 }
 
+.products-heading{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-gap: 15px;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
 @media screen and (max-width: 800px) {
   .hero-banner-container{
     line-height: 1.3;
