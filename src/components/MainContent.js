@@ -32,8 +32,20 @@ const MainContent = () => {
                         <p className='product-price'>$10.99</p>
                     </div>
                 </div>
-                <div></div>
-                <div></div>
+                <div>
+                    <div className='product-card'>
+                        <img src={secondProductContainerImg} alt="coffe img" className='product-image'/>
+                        <p className='product-name'>coffee</p>
+                        <p className='product-price'>$4.99</p>
+                    </div>
+                </div>
+                <div>
+                    <div className='product-card'>
+                        <img src={thirdProductContainerImg} alt="coffe img" className='product-image'/>
+                        <p className='product-name'>earphones</p>
+                        <p className='product-price'>$9.99</p>
+                    </div>
+                </div>
             </div>
         </main>
     );
