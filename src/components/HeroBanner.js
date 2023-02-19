@@ -1,5 +1,6 @@
 import React from 'react';
 import heroBannerImg from "../assets/img/hero-headset-img.webp"
+import { Link } from 'react-router-dom';
 const HeroBanner = () => {
     return (
         <div className='hero-banner-container'>
@@ -10,7 +11,9 @@ const HeroBanner = () => {
                 <img src={heroBannerImg} className="hero-banner-image" alt="hero headphone img"></img>
             </div>
             <div>
-                <button>Shop Now</button>
+                <button>
+                    <Link to={`/about`}>Shop Now</Link>
+                </button>
                 <div className='desc'>
                     <h5>Description</h5>
                     <p>neon headphones</p>

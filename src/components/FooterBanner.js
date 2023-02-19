@@ -12,7 +12,7 @@ const FooterBanner = () => {
                     <p>2 Nov to 15 Dec</p>
                 </div>
                 <div className='footer-banner-image-container'>
-                    <img src={heroBannerImg} alt="footer banner image" className='footer-banner-image'/>
+                    <img src={heroBannerImg} alt="footer banner" className='footer-banner-image'/>
                 </div>
                 <div className='right'>
                     <p>fashionable</p>
