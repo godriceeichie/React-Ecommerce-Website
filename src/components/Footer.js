@@ -7,8 +7,8 @@ const Footer = () => {
             <div className='footer-container'>
                 <p>2022 Simona's Headphones All rights reserverd</p>
                 <p className='icons'>
-                    <AiFillInstagram />
-                    <AiOutlineTwitter />
+                    <AiFillInstagram style={{fontSize: '30px'}}/>
+                    <AiOutlineTwitter style={{fontSize: '30px'}}/>
                 </p>
             </div>
         </footer>

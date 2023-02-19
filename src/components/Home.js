@@ -12,7 +12,9 @@ const Home = () => {
         <Products.Provider value={products}>
             <div className='layout'>
                 <Header />
-                <Outlet />
+                <main className='main-container'>
+                    <Outlet />
+                </main>
                 <Footer />
             </div>
         </Products.Provider>

@@ -5,11 +5,11 @@ import ProductsBanner from './ProductsBanner';
 
 const MainContent = () => {
     return (
-        <main className='main-content'>
+        <>
             <HeroBanner />
             <ProductsBanner />
             <FooterBanner /> 
-        </main>
+        </>
     );
 }
 
