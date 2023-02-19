@@ -14,6 +14,12 @@ const FooterBanner = () => {
                 <div className='footer-banner-image-container'>
                     <img src={heroBannerImg} alt="footer banner image" className='footer-banner-image'/>
                 </div>
+                <div className='right'>
+                    <p>fashionable</p>
+                    <h3>Summer sale</h3>
+                    <p>neon headphones</p>
+                    <button>Shop now</button>
+                </div>
             </div>
         </div>
     );
