@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import productInfo from '../data/productInfo';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom'
+import { Products } from './Home';
+
 const ProductsBanner = () => {
-    const [products, setProducts] = useState(productInfo);
+    const products = useContext(Products)
     return (
         <section>
             <div className='products-heading'>
@@ -10,15 +12,17 @@ const ProductsBanner = () => {
             </div>
             <div className='products-container'>
                 {
-                    products.map(({image, title, price}) => {
+                    products.map(({id, image, title, price}) => {
                         return(
-                            <div>
-                                <div className='product-card'>
-                                    <img src={image} alt="" className='product-image'/>
-                                    <p className='product-name'>{title}</p>
-                                    <p className='product-price'>{`$${price}`}</p>
+                            <Link to={`/product/${title}`} key={id}>
+                                <div>
+                                    <div className='product-card'>
+                                        <img src={image} alt="" className='product-image'/>
+                                        <p className='product-name'>{title}</p>
+                                        <p className='product-price'>{`$${price}`}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     })
                 }
