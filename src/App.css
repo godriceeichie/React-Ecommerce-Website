@@ -161,6 +161,47 @@ a{
   font-weight: 200;
 }
 
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-gap: 15px;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.product-card {
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform .5s ease;
+  color: #324d67;
+}
+
+.product-card:hover {
+  transform: scale(1.1);
+}
+
+.product-image {
+  background-color: #ebebeb;
+  transform: scale(1);
+  transition: transform .5s ease;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+}
+
+.product-name {
+  font-weight: 500;
+}
+
+.product-price {
+  font-weight: 800;
+  margin-top: 6px;
+  color: #000;
+}
+
 @media screen and (max-width: 800px) {
   .hero-banner-container{
     line-height: 1.3;
