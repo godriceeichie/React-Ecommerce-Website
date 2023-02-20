@@ -5,7 +5,7 @@ import { Products } from './Home';
 
 
 const Header = () => {
-    const {productNumber} = useContext(Products);
+    const { cartNumber } = useContext(Products);
     return (
         <nav>
             <div className='navbar-container'>
@@ -14,7 +14,7 @@ const Header = () => {
                 </h1>
                 <button className='cart-icon'>
                     <AiOutlineShopping />
-                    <span className='cart-item-qty'>{productNumber}</span>
+                    <span className='cart-item-qty'>{cartNumber}</span>
                 </button>
             </div>
             
