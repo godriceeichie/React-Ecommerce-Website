@@ -1,6 +1,7 @@
 import heroBannerImg from "../assets/img/hero-headset-img.webp"
 import secondProductContainerImg from "../assets/img/product-cont-second-img.jpg"
 import thirdProductContainerImg from "../assets/img/product-cont-third-img.jpg"
+import secondCoffeeImg from "../assets/img/coffee-second-image.jpg"
 const productInfo = [
     {
         id: 0,
@@ -14,7 +15,8 @@ const productInfo = [
         title: "coffee",
         details: "tasty coffee",
         price: 4.99,
-        image: secondProductContainerImg
+        image: secondProductContainerImg,
+        secondImage: secondCoffeeImg
     },
     {
         id: 2,

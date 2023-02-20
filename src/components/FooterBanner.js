@@ -1,5 +1,6 @@
 import React from 'react';
 import heroBannerImg from "../assets/img/hero-headset-img.webp"
+import { Link } from 'react-router-dom'
 
 const FooterBanner = () => {
     return (
@@ -18,7 +19,9 @@ const FooterBanner = () => {
                     <p>fashionable</p>
                     <h3>Summer sale</h3>
                     <p>neon headphones</p>
-                    <button>Shop now</button>
+                    <Link to={'/product/headphones'}>
+                        <button>Shop now</button>
+                    </Link>
                 </div>
             </div>
         </div>

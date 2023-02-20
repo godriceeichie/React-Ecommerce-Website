@@ -12,7 +12,7 @@ const HeroBanner = () => {
             </div>
             <div>
                 <button>
-                    <Link to={`/about`}>Shop Now</Link>
+                    <Link to={`/product/headphones`}>Shop Now</Link>
                 </button>
                 <div className='desc'>
                     <h5>Description</h5>
