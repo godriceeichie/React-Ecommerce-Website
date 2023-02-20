@@ -1,21 +1,34 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Products } from './Home';
-import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
+
 
 const ProductPage = () => {
-    const { id } = useParams()
-    const [productState, setproductState] = useState([]);
+    let { id } = useParams()
     const { products } = useContext(Products);
+    const [productState, setproductState] = useState([]);
+    const [selectedImage, setselectedImage] = useState(0);
+    const [productNumber, setproductNumber] = useState(1);
+    const { cartNumber, setcartNumber } = useContext(Products)
+    
     useEffect(() => {
         setproductState(products.filter(({title}) => title === id));
-    }, [products]);
-
-    const [selectedImage, setselectedImage] = useState(0)
+        
+    }, [id]);
+    
     const handleImageClick = (index) => {
         setselectedImage(index)
     }
 
+    const decQty = () => {
+        if(productNumber > 1) setproductNumber(productNumber - 1)
+        else setproductNumber(productNumber)
+    }
+
+    const incQty = () => {
+        setproductNumber(productNumber + 1)
+    }
     useEffect(() => {
         const timer = setTimeout(() => {
             setselectedImage((selectedImage + 1) % 2)
@@ -23,7 +36,7 @@ const ProductPage = () => {
         return () => clearTimeout(timer);
     }, [selectedImage])
     
-
+    
     return (
         <>
             {
@@ -49,13 +62,13 @@ const ProductPage = () => {
                                     <p>{details}</p>
                                     <p className='price'>{`$${price}`}</p>
                                     <div className='quantity'>
-                                        <h3>Quantity</h3>
+                                        <h3>Quantity:</h3>
                                         <p className='quantity-desc'>
-                                            <span className='minus'>
+                                            <span className='minus' onClick={decQty}>
                                                 <AiOutlineMinus />
                                             </span>
-                                            <span className='num'>1</span>
-                                            <span className='plus' >
+                                            <span className='num'>{productNumber}</span>
+                                            <span className='plus' onClick={incQty}>
                                                 <AiOutlinePlus />
                                             </span>
                                         </p>
@@ -73,13 +86,13 @@ const ProductPage = () => {
                                         {
                                             products.map(({image, title, price, id}) => {
                                                 return (
-                                                    <div key={id}>
+                                                    <Link to={`/product/${title}`} key={id}>
                                                         <div className='product-card'>
                                                             <img src={image} alt="" className='product-image'/>
                                                             <p className='product-name'>{title}</p>
                                                             <p className='product-price'>{`$${price}`}</p>
                                                         </div>
-                                                    </div>
+                                                    </Link>
                                                 )
                                             })
                                         }
