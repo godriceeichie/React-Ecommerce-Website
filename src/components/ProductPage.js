@@ -5,7 +5,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 const ProductPage = () => {
     let { id } = useParams();
-    const { products } = useContext(Products);
+    const { products, cart, cartDispatch } = useContext(Products);
     const [productState, setproductState] = useState([]);
     const [selectedImage, setselectedImage] = useState(0);
     const [productNumber, setproductNumber] = useState(1);
@@ -13,6 +13,7 @@ const ProductPage = () => {
 
     useEffect(() => {
         setproductState(products.filter(({ title }) => title === id));
+        setproductNumber(1)
     }, [id]);
 
     const handleImageClick = (index) => {
@@ -36,7 +37,7 @@ const ProductPage = () => {
     };
 
     const updateCart = () => {
-        setcartNumber(productNumber + 1);
+        // setcartNumber(cartNumber + productNumber);
     };
 
     return (
@@ -103,7 +104,29 @@ const ProductPage = () => {
                                     <button className="add-to-cart" onClick={updateCart}>
                                         Add to Cart
                                     </button>
-                                    <button className="buy-now">Buy Now</button>
+                                    <button className="buy-now"
+                                     onClick={() =>
+                                        { 
+                                         cartDispatch( 
+                                            {
+                                                type:"ADD_TO_CART",
+                                                payload:{
+                                                    item:{ 
+                                                        id, 
+                                                        title, 
+                                                        image, 
+                                                        details, 
+                                                        price, 
+                                                        secondImage,
+                                                        qty:productNumber 
+                                                    }
+                                                
+                                                }
+                                            }
+                                            )
+                                         }
+                                     }
+                                    >Buy Now</button>
                                 </div>
                             </div>
                         </div>
