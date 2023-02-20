@@ -5,11 +5,10 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 const ProductPage = () => {
     let { id } = useParams();
-    const { products, cart, cartDispatch } = useContext(Products);
+    const { products, cartDispatch } = useContext(Products);
     const [productState, setproductState] = useState([]);
     const [selectedImage, setselectedImage] = useState(0);
     const [productNumber, setproductNumber] = useState(1);
-    const { cartNumber, setcartNumber } = useContext(Products);
 
     useEffect(() => {
         setproductState(products.filter(({ title }) => title === id));

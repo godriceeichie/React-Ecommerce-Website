@@ -3,6 +3,7 @@ import { Outlet, useParams } from "react-router-dom";
 import productInfo from "../data/productInfo";
 import Footer from "./Footer";
 import Header from "./Header";
+import CartHamburger from "./CartHamburger";
 
 export const Products = createContext();
 
@@ -20,7 +21,7 @@ const cartReducer = (state, action) => {
         else return true;
       };
 
-      if(!isExist()) return [...state, action?.payload?.item] 
+      if(!isExist()) return [...state, {...action?.payload?.item ,price:action?.payload?.item?.qty * action?.payload?.item?.price}] 
       return [...state];
         
     case "REMOVE_FROM_CART":
@@ -30,7 +31,7 @@ const cartReducer = (state, action) => {
     case "UPDATE_QTY":
       state.map((element) => {
         if (element.id === action.payload.id) {
-          return { ...element, qty: action.payload.qty };
+          return { ...element, qty: action.payload.qty, price:action.payload.qty * action.payload.price  };
         }
         return element;
       });
@@ -43,6 +44,7 @@ const Home = () => {
 
   const [products, setProducts] = useState(productInfo);
   const [cartNumber, setcartNumber] = useState(0);
+  const [drawer,setDrawer] = useState(false)
 
 
   const [cart, cartDispatch] = useReducer(cartReducer, []);
@@ -63,7 +65,10 @@ const Home = () => {
       value={{ products, cartNumber, setcartNumber, cart, cartDispatch }}
     >
       <div className="layout">
-        <Header />
+        {
+            drawer && <CartHamburger data={cart} setDrawer={setDrawer} cartNumber={cartNumber}  />
+        }
+        <Header setDrawer={setDrawer} />
         <main className="main-container">
           <Outlet />
         </main>

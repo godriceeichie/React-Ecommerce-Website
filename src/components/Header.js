@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Products } from './Home';
 
 
-const Header = () => {
+const Header = ({setDrawer}) => {
     const { cartNumber } = useContext(Products);
     return (
         <nav>
@@ -12,7 +12,7 @@ const Header = () => {
                 <h1 className='logo'>
                     <Link to={"/"}>Headphones</Link> 
                 </h1>
-                <button className='cart-icon'>
+                <button onClick={() => setDrawer(true)} className='cart-icon'>
                     <AiOutlineShopping />
                     <span className='cart-item-qty'>{cartNumber}</span>
                 </button>
