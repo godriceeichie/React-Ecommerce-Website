@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Products } from './Home';
+import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 const ProductPage = () => {
     const { id } = useParams()
     const [productState, setproductState] = useState([]);
-    const products = useContext(Products);
-
+    const { products } = useContext(Products);
     useEffect(() => {
         setproductState(products.filter(({title}) => title === id));
     }, [products]);
@@ -22,14 +22,15 @@ const ProductPage = () => {
         }, 5000);
         return () => clearTimeout(timer);
     }, [selectedImage])
+    
 
     return (
         <>
             {
                 productState.map(({id, title, image, details, price, secondImage}) => {
                     return(
-                        <div>
-                            <div className='product-detail-container' key={id}>
+                        <div key={id}>
+                            <div className='product-detail-container'>
                                 <div>
                                     <div className='image-container'>
                                         {
@@ -50,9 +51,13 @@ const ProductPage = () => {
                                     <div className='quantity'>
                                         <h3>Quantity</h3>
                                         <p className='quantity-desc'>
-                                            <span className='minus'></span>
-                                            <span className='num'></span>
-                                            <span className='plus'></span>
+                                            <span className='minus'>
+                                                <AiOutlineMinus />
+                                            </span>
+                                            <span className='num'>1</span>
+                                            <span className='plus' >
+                                                <AiOutlinePlus />
+                                            </span>
                                         </p>
                                     </div>
                                     <div className='buttons'>

@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer>
             <div className='footer-container'>
-                <p>2022 Simona's Headphones All rights reserverd</p>
+                <p>2023 Simona's Headphones All rights reserverd</p>
                 <p className='icons'>
                     <AiFillInstagram style={{fontSize: '30px'}}/>
                     <AiOutlineTwitter style={{fontSize: '30px'}}/>

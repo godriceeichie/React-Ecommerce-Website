@@ -8,8 +8,9 @@ export const Products = React.createContext()
 
 const Home = () => {
     const [products, setProducts] = useState(productInfo);
+    const [productNumber, setproductNumber] = useState();
     return (
-        <Products.Provider value={products}>
+        <Products.Provider value={{products, productNumber, setproductNumber}}>
             <div className='layout'>
                 <Header />
                 <main className='main-container'>

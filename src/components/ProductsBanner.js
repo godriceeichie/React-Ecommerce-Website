@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Products } from './Home';
 
 const ProductsBanner = () => {
-    const products = useContext(Products)
+    const { products } = useContext(Products)
     return (
         <section>
             <div className='products-heading'>
